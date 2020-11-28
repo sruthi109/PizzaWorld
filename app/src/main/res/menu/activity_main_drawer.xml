@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_two_topping"
+            android:icon="@drawable/ic_local_pizza_black_24dp"
+            android:title="Two Topping Pizza" />
+        <item
+            android:id="@+id/nav_three_topping"
+            android:icon="@drawable/threepizza"
+            android:title="Three Topping Pizza" />
+        <item
+            android:id="@+id/nav_combo"
+            android:icon="@drawable/combing"
+            android:title="Combo Order" />
+        <item
+            android:id="@+id/nav_customised"
+            android:icon="@drawable/customised"
+            android:title="Customise Order" />
+
+        <item
+
+            android:title="Others">
+            <menu>
+                <item
+                    android:id="@+id/nav_extra"
+                    android:icon="@drawable/extra"
+                    android:title="Extras" />
+            </menu>
+        </item>
+    </group>
+</menu>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+
+        android:id="@+id/nav_home"
+        android:name="com.example.pizzaworld.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_two_topping"
+        android:name="com.example.pizzaworld.ui.twotopping.TwoToppingFragment"
+        android:label="Two Topping Pizza"
+        tools:layout="@layout/fragment_two_topping" />
+
+    <fragment
+        android:id="@+id/nav_three_topping"
+        android:name="com.example.pizzaworld.ui.threetopping.ThreeToppingFragment"
+        android:label="Three Topping Pizza"
+        tools:layout="@layout/fragment_three_topping" />
+    <fragment
+        android:id="@+id/nav_combo"
+        android:name="com.example.pizzaworld.ui.comboOrder.ComboFragment"
+        android:label="Combo Order"
+        tools:layout="@layout/fragment_combo" />
+    <fragment
+        android:id="@+id/nav_customised"
+        android:name="com.example.pizzaworld.ui.CustomisedOrder.CustomisedOrderFragment"
+        android:label="Customise Order"
+        tools:layout="@layout/fragment_customised_order" />
+    <fragment
+        android:id="@+id/nav_extra"
+        android:name="com.example.pizzaworld.ui.extra.ExtraFragment"
+        android:label="Extra"
+        tools:layout="@layout/fragment_extra" />
+</navigation>

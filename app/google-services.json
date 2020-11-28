@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "180566981673",
+    "firebase_url": "https://pizzaworld-fc03a.firebaseio.com",
+    "project_id": "pizzaworld-fc03a",
+    "storage_bucket": "pizzaworld-fc03a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180566981673:android:531b5d0d20e2a6f8e63038",
+        "android_client_info": {
+          "package_name": "com.example.pizzaworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180566981673-mb4njoblfkk15kgmfj70kt2t7ho1dems.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACdsNYREU8tfOv841P29OtzDwfimPmoA0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180566981673-mb4njoblfkk15kgmfj70kt2t7ho1dems.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
