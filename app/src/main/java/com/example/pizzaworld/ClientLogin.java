@@ -33,7 +33,7 @@ public class ClientLogin extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         fAuth = FirebaseAuth.getInstance();
         login = findViewById(R.id.btn_login);
-        forgotpassword = findViewById(R.id.btn_forgotpassword);
+
         adminsign=findViewById(R.id.btn_admin);
         signup=findViewById(R.id.btn_signup);
 
