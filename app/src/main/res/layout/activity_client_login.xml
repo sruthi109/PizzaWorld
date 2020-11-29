@@ -89,21 +89,6 @@
             android:background="@color/mainAppColor"
             android:text="Login"
             />
-        <Button
-            android:id="@+id/btn_forgotpassword"
-            style="@android:style/Widget.Holo.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_alignParentRight="true"
-            android:layout_below = "@+id/btn_login"
-            android:layout_centerHorizontal = "true"
-            android:background="@android:color/transparent"
-            android:text="Forgot Password?"
-            android:layout_marginTop="2dp"
-            android:layout_marginRight="30dp"
-            android:textColor="@color/mainAppColor"
-            android:visibility="visible" />
-
 
 
         <Button
