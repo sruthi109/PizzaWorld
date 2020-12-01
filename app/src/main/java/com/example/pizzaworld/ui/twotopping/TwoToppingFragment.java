@@ -1,5 +1,6 @@
 package com.example.pizzaworld.ui.twotopping;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,59 +8,140 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.pizzaworld.R;
+import com.example.pizzaworld.Details;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TwoToppingFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class TwoToppingFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    ImageView vegPizza,pizzaHawaiian,meatpizza,chickenpizza,buffalopizza,margheritapizza;
+    TextView priceVeg,pricehawaiian,priceMeat,priceChicken,buffaloprice,margheritaprice;
+    TextView vegname,hawaiianname,Meatname,chickenname,buffaloname,margheritaname;
+
+
 
     public TwoToppingFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment TwoToppingFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static TwoToppingFragment newInstance(String param1, String param2) {
-        TwoToppingFragment fragment = new TwoToppingFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_two_topping, container, false);
+        View root= inflater.inflate(R.layout.fragment_two_topping, container, false);
+
+        priceVeg=root.findViewById(R.id.priceveg);
+        pricehawaiian=root.findViewById(R.id.pricehawaian);
+        priceMeat=root.findViewById(R.id.pricemeat);
+        priceChicken=root.findViewById(R.id.pricechicken);
+        buffaloprice=root.findViewById(R.id.pricebuffalo);
+        margheritaprice=root.findViewById(R.id.margheritapizzaprice);
+
+        vegPizza=root.findViewById(R.id.pizzaveg);
+        pizzaHawaiian=root.findViewById(R.id.pizzahawaian);
+        meatpizza=root.findViewById(R.id.pizzameat);
+        chickenpizza=root.findViewById(R.id.bbqchickenpizza);
+        buffalopizza=root.findViewById(R.id.buffalopizza);
+        margheritapizza=root.findViewById(R.id.margheritapizza);
+
+        vegname=root.findViewById(R.id.Vegname);
+        hawaiianname=root.findViewById(R.id.hawaianname);
+        Meatname=root.findViewById(R.id.Meatname);
+        chickenname=root.findViewById(R.id.chickenname);
+        buffaloname=root.findViewById(R.id.buffaloname);
+        margheritaname=root.findViewById(R.id.margheritapizzaname);
+
+
+
+
+
+        vegPizza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=priceVeg.getText().toString();
+                String name=vegname.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price",price);
+                intent.putExtra("image",R.drawable.vegpizza);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
+
+        pizzaHawaiian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=pricehawaiian.getText().toString();
+                String name=hawaiianname.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price",price);
+                intent.putExtra("image",R.drawable.hawa);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
+
+        meatpizza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=priceMeat.getText().toString();
+                String name=Meatname.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price",price);
+                intent.putExtra("image",R.drawable.meatpizza);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
+        chickenpizza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=priceChicken.getText().toString();
+                String name=chickenname.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price", price);
+                intent.putExtra("image",R.drawable.bbqchickenpizza);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
+        margheritapizza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=margheritaprice.getText().toString();
+                String name=margheritaname.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price",price);
+                intent.putExtra("image",R.drawable.margheritapizza);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
+
+
+        buffalopizza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=buffaloprice.getText().toString();
+                String name=buffaloname.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price", price);
+                intent.putExtra("image",R.drawable.buffalopizza);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
+        return root;
     }
 }
