@@ -1,5 +1,6 @@
 package com.example.pizzaworld.ui.extra;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,59 +8,140 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.example.pizzaworld.Details;
 import com.example.pizzaworld.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ExtraFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class ExtraFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+public class ExtraFragment extends Fragment {
+    ImageView flavouredwater,nestea,waterbottle,monster,brownies,specialitychicken;
+    TextView  sparklingname,nesteaname,watername,monstername,browniesname,specialityname;
+    TextView  pricesparkling,pricenestea,pricewater,pricemonster,pricebrownies,pricespecialitychic;
 
     public ExtraFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ExtraFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ExtraFragment newInstance(String param1, String param2) {
-        ExtraFragment fragment = new ExtraFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_extra, container, false);
+        View root= inflater.inflate(R.layout.fragment_extra, container, false);
+        pricesparkling=root.findViewById(R.id.pricesparkling);
+        pricenestea=root.findViewById(R.id.pricenestea);
+        pricewater=root.findViewById(R.id.pricewater);
+        pricemonster=root.findViewById(R.id.pricemonster);
+        pricebrownies=root.findViewById(R.id.pricebrownies);
+        pricespecialitychic=root.findViewById(R.id.pricespecialitychic);
+
+
+
+        flavouredwater=root.findViewById(R.id.flavouredwater);
+        nestea=root.findViewById(R.id.nestea);
+        waterbottle=root.findViewById(R.id.waterbottle);
+        monster=root.findViewById(R.id.monster);
+        brownies=root.findViewById(R.id.brownies);
+        specialitychicken=root.findViewById(R.id.specialitychicken);
+
+
+        sparklingname=root.findViewById(R.id.sparklingname);
+        nesteaname=root.findViewById(R.id.nesteaname);
+        watername=root.findViewById(R.id.watername);
+        monstername=root.findViewById(R.id.monstername);
+        browniesname=root.findViewById(R.id.browniesname);
+        specialityname=root.findViewById(R.id.specialityname);
+
+
+        flavouredwater.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=pricesparkling.getText().toString();
+                String name=sparklingname.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price",price);
+                intent.putExtra("image",R.drawable.sparkling_water);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
+        nestea.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=pricenestea.getText().toString();
+                String name=nesteaname.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price",price);
+                intent.putExtra("image",R.drawable.nestea);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
+
+        waterbottle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=pricewater.getText().toString();
+                String name=watername.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price",price);
+                intent.putExtra("image",R.drawable.water_bottle);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
+
+        monster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=pricemonster.getText().toString();
+                String name=monstername.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price",price);
+                intent.putExtra("image",R.drawable.monster);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
+
+        brownies.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=pricebrownies.getText().toString();
+                String name=browniesname.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price",price);
+                intent.putExtra("image",R.drawable.marblebrownies);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
+
+        specialitychicken.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=pricespecialitychic.getText().toString();
+                String name=specialityname.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price",price);
+                intent.putExtra("image",R.drawable.speciality);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
+
+       
+        return root;
     }
 }
