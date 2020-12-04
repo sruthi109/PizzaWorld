@@ -16,10 +16,9 @@ import com.example.pizzaworld.R;
 
 
 public class ExtraFragment extends Fragment {
-    ImageView flavouredwater,nestea,waterbottle,monster,brownies,specialitychicken;
-    TextView  sparklingname,nesteaname,watername,monstername,browniesname,specialityname;
-    TextView  pricesparkling,pricenestea,pricewater,pricemonster,pricebrownies,pricespecialitychic;
-
+    ImageView coke_tin,bottle,flavouredwater,nestea,waterbottle,monster,brownies,specialitychicken,lava,wings,fries,poutine;
+    TextView tinname,bottlename,sparklingname,nesteaname,watername,monstername,browniesname,specialityname,lavaname,wingsname,friesname,poutinename;
+    TextView pricecoke,pricebottle,pricesparkling,pricenestea,pricewater,pricemonster,pricebrownies,pricespecialitychic,pricelava,pricewings,pricefries,pricepout;
     public ExtraFragment() {
         // Required empty public constructor
     }
@@ -33,30 +32,76 @@ public class ExtraFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root= inflater.inflate(R.layout.fragment_extra, container, false);
+
+        pricecoke=root.findViewById(R.id.pricecoke);
+        pricebottle=root.findViewById(R.id.pricebottle);
         pricesparkling=root.findViewById(R.id.pricesparkling);
         pricenestea=root.findViewById(R.id.pricenestea);
         pricewater=root.findViewById(R.id.pricewater);
         pricemonster=root.findViewById(R.id.pricemonster);
         pricebrownies=root.findViewById(R.id.pricebrownies);
         pricespecialitychic=root.findViewById(R.id.pricespecialitychic);
+        pricelava=root.findViewById(R.id.pricelava);
+        pricewings=root.findViewById(R.id.pricewings);
+        pricefries=root.findViewById(R.id.pricefries);
+        pricepout=root.findViewById(R.id.pricepout);
 
 
 
+        coke_tin=root.findViewById(R.id.coke_tin);
+        bottle=root.findViewById(R.id.bottle);
         flavouredwater=root.findViewById(R.id.flavouredwater);
         nestea=root.findViewById(R.id.nestea);
         waterbottle=root.findViewById(R.id.waterbottle);
         monster=root.findViewById(R.id.monster);
         brownies=root.findViewById(R.id.brownies);
         specialitychicken=root.findViewById(R.id.specialitychicken);
+        lava=root.findViewById(R.id.lava);
+        wings=root.findViewById(R.id.wings);
+        fries=root.findViewById(R.id.fries);
+        poutine=root.findViewById(R.id.poutine);
 
 
+        tinname=root.findViewById(R.id.tinname);
+        bottlename=root.findViewById(R.id.bottlename);
         sparklingname=root.findViewById(R.id.sparklingname);
         nesteaname=root.findViewById(R.id.nesteaname);
         watername=root.findViewById(R.id.watername);
         monstername=root.findViewById(R.id.monstername);
         browniesname=root.findViewById(R.id.browniesname);
         specialityname=root.findViewById(R.id.specialityname);
+        lavaname=root.findViewById(R.id.lavaname);
+        wingsname=root.findViewById(R.id.wingsname);
+        friesname=root.findViewById(R.id.friesname);
+        poutinename=root.findViewById(R.id.poutinename);
 
+        coke_tin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=pricecoke.getText().toString();
+                String name=tinname.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price",price);
+                intent.putExtra("image",R.drawable.coke_tin);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
+
+        bottle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=pricebottle.getText().toString();
+                String name=bottlename.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price",price);
+                intent.putExtra("image",R.drawable.bottle_coke);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
 
         flavouredwater.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +116,7 @@ public class ExtraFragment extends Fragment {
 
             }
         });
+
         nestea.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,7 +158,6 @@ public class ExtraFragment extends Fragment {
 
             }
         });
-
         brownies.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,7 +186,61 @@ public class ExtraFragment extends Fragment {
             }
         });
 
-       
+        lava.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=pricelava.getText().toString();
+                String name=lavaname.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price",price);
+                intent.putExtra("image",R.drawable.lava);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
+        wings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=pricewings.getText().toString();
+                String name=wingsname.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price",price);
+                intent.putExtra("image",R.drawable.chickenwingsss);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
+
+        fries.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=pricefries.getText().toString();
+                String name=friesname.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price",price);
+                intent.putExtra("image",R.drawable.fries);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
+
+        poutine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String price=pricepout.getText().toString();
+                String name=poutinename.getText().toString();
+                Intent intent = new Intent(getActivity(), Details.class);
+                intent.putExtra("price",price);
+                intent.putExtra("image",R.drawable.poutine);
+                intent.putExtra("name",name);
+                startActivity(intent);
+
+            }
+        });
+
         return root;
     }
 }
