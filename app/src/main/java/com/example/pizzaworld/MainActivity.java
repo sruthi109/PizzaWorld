@@ -51,13 +51,13 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-  /*  public void Cart(MenuItem item) {
-        startActivity(new Intent(getApplicationContext(),activity_addcart.class));
+   public void Cart(MenuItem item) {
+        startActivity(new Intent(getApplicationContext(),AddCart.class));
         finish();
     }
 
 
-   */
+
 
 
     @Override

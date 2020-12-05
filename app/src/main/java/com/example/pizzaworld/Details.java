@@ -349,7 +349,7 @@ public class  Details extends AppCompatActivity {
                         Toast.makeText(Details.this, "e.toString()", Toast.LENGTH_SHORT).show();
                     }
                 });
-                
+
 
 
                 Intent i=new Intent(Details.this, MainActivity.class);
