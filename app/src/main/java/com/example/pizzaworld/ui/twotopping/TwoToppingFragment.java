@@ -57,9 +57,6 @@ public class TwoToppingFragment extends Fragment {
         margheritaname=root.findViewById(R.id.margheritapizzaname);
 
 
-
-
-
         vegPizza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

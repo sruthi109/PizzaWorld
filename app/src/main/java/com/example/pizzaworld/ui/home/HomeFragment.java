@@ -38,10 +38,8 @@ public class HomeFragment extends Fragment   {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.nav_two_topping);
-                //
-                // Intent i=new Intent(getActivity(), MainActivity2.class);
-                // startActivity(i);
-                Toast.makeText(getActivity(), "hello", Toast.LENGTH_SHORT).show();
+
+
 
             }});
 
@@ -50,10 +48,7 @@ public class HomeFragment extends Fragment   {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.nav_three_topping);
-                //
-                // Intent i=new Intent(getActivity(), MainActivity2.class);
-                // startActivity(i);
-                Toast.makeText(getActivity(), "hello", Toast.LENGTH_SHORT).show();
+
 
             }});
         textcustomised.setOnClickListener(new View.OnClickListener(){

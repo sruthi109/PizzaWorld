@@ -18,7 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ClientLogin extends AppCompatActivity {
-    Button login,signup,forgotpassword,adminsign;
+    Button login,signup,adminsign;
     EditText Email,Password;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
@@ -54,8 +54,6 @@ public class ClientLogin extends AppCompatActivity {
                     return;
                 }
 
-
-
                 progressBar.setVisibility(View.VISIBLE);
 
                 // authenticate the user
@@ -65,6 +63,7 @@ public class ClientLogin extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(ClientLogin.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
+
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         }else {
                             Toast.makeText(ClientLogin.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -73,6 +72,7 @@ public class ClientLogin extends AppCompatActivity {
 
                     }
                 });
+
 
             }
         });

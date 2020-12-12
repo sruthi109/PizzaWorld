@@ -7,16 +7,23 @@ import java.util.ArrayList;
 
 public class PojoDetails implements Serializable {
     private String id;
-    private String pizzaname,price,quantuu,des,status,userId;
-    public PojoDetails(String pizzaname, String price, String quantuu, String des, String status, String userId) {
+    private String pizzaname,price,quantuu,des,status,totalprice,address,userId;
+    public PojoDetails(String pizzaname, String price, String quantuu, String des, String status,String totalprice,String address, String userId) {
         this.pizzaname=pizzaname;
         this.price=price;
         this.quantuu=quantuu;
         this.des=des;
         this.status=status;
         this.userId=userId;
+        this.totalprice=totalprice;
+        this.address=address;
     }
-    public PojoDetails(String pizzaname, String price, String quantuu, String des, String status) {
+
+    public PojoDetails(String status,String address,String totalprice) {
+        this.status=status;
+        this.address=address;
+        this.totalprice=totalprice;
+
     }
 
     public PojoDetails() {
@@ -72,6 +79,22 @@ public class PojoDetails implements Serializable {
 
     public String getUserId() {
         return userId;
+    }
+
+    public String getTotalprice() {
+        return totalprice;
+    }
+
+    public void setTotalprice(String totalprice) {
+        this.totalprice = totalprice;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public void setUserId(String userId) {

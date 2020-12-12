@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pizzaworld.model.PojoDetails;
+import com.example.pizzaworld.ui.home.HomeFragment;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -332,11 +333,14 @@ public class  Details extends AppCompatActivity {
                 String quantuu=quantity.getText().toString();
                 String des=textDescription.getText().toString();
                 String status="Cart";
+                String totalprice="";
+                String address="";
                 Toast.makeText(Details.this,"bdbd"+pizzaname,Toast.LENGTH_SHORT).show();
+                //  if (!hasValidationErrors(name, price, quantuu, des, status)) {
 
                 CollectionReference reference = db.collection("AddToCart");
 
-                PojoDetails PojoDetails = new PojoDetails(pizzaname,price, quantuu, des, status, userId);
+                PojoDetails PojoDetails = new PojoDetails(pizzaname,price, quantuu, des, status,totalprice,address, userId);
 
                 reference.add(PojoDetails).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
@@ -350,13 +354,14 @@ public class  Details extends AppCompatActivity {
                     }
                 });
 
+                //finish();
 
 
                 Intent i=new Intent(Details.this, MainActivity.class);
                 startActivity(i);
 
             }
-
+            //   }
 
 
         });
