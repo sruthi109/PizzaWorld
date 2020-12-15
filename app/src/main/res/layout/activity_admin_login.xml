@@ -1,88 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".AdminLogin">
-
-
-
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:orientation="vertical" >
-
-        <ImageView
-            android:id="@+id/img"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="40dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/pizza" />
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:gravity="center"
-            android:textColor="@color/mainAppColor"
-            android:textSize="25sp"
-            android:layout_marginTop="50dp"
-            android:layout_height="wrap_content"
-            android:text="Admin Dashboard"
-            android:layout_below="@id/img"
-            />
-
-        <TextView
-            android:id="@+id/errorView"
-            android:layout_below="@id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="@color/red"
-            android:layout_marginTop="10dp"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            />
-
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below = "@+id/errorView"
-            android:layout_centerHorizontal = "true"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="20dp"
-            android:drawablePadding="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:hint="Email"
-            android:textColorHint="@color/black"
-            android:drawableLeft="@drawable/email"
-            android:inputType="textEmailAddress"
-            android:padding="15dp"
-            android:cursorVisible="true" />
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below = "@+id/email"
-            android:layout_centerHorizontal = "true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="20dp"
-            android:drawablePadding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:drawableLeft="@drawable/account"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:padding="15dp" />
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/bt_login_login"
@@ -90,50 +19,106 @@
             android:layout_height="50dp"
             android:layout_below="@+id/password"
             android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:textColor="@color/white"
             android:background="@color/mainAppColor"
             android:text="Login"
-            />
-        <Button
-            android:id="@+id/bt_forgotpassword"
-            style="@android:style/Widget.Holo.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_alignParentRight="true"
-            android:layout_below = "@+id/bt_login_login"
-            android:layout_centerHorizontal = "true"
-            android:background="@android:color/transparent"
-            android:text="Forgot Password?"
-            android:layout_marginTop="2dp"
-            android:layout_marginRight="30dp"
-            android:textColor="@color/mainAppColor"
-            android:visibility="visible" />
-
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/user"
             style="@android:style/Widget.Holo.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_below = "@+id/bt_forgotpassword"
-            android:layout_centerHorizontal = "true"
-            android:background="@android:color/transparent"
-            android:text="Login As User"
-
+            android:layout_below="@+id/bt_login_login"
+            android:layout_centerHorizontal="true"
             android:layout_marginBottom="50dp"
+            android:background="@android:color/transparent"
+
+            android:text="Login As User"
             android:textColor="@color/mainAppColor"
             android:visibility="visible" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/errorView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/email"
+            android:drawablePadding="10dp"
+            android:hint="Email"
+            android:backgroundTint="@color/mainAppColor"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/account"
+            android:drawablePadding="10dp"
+            android:hint="Password"
+
+            android:backgroundTint="@color/mainAppColor"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/pizza" />
+
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/errorView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/red" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="Admin Login"
+            android:textColor="@color/mainAppColor"
+            android:textSize="25sp" />
     </RelativeLayout>
 
 </ScrollView>
