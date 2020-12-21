@@ -39,4 +39,9 @@
         android:name="com.example.pizzaworld.ui.extra.ExtraFragment"
         android:label="Extra"
         tools:layout="@layout/fragment_extra" />
+    <fragment
+        android:id="@+id/nav_aboutUs"
+        android:name="com.example.pizzaworld.AboutUs"
+        android:label="About Us"
+        tools:layout="@layout/fragment_about_us" />
 </navigation>
