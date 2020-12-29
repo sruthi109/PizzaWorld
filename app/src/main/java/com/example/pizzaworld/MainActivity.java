@@ -51,9 +51,23 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-   public void Cart(MenuItem item) {
+  /* public void Cart(MenuItem item) {
         startActivity(new Intent(getApplicationContext(),AddCart.class));
         finish();
+    }
+
+   */
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.Cart_icon:
+                Intent account = new Intent(MainActivity.this, AddCart.class);
+                startActivity(account);
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 
