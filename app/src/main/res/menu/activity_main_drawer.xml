@@ -36,6 +36,11 @@
                     android:id="@+id/nav_extra"
                     android:icon="@drawable/extra"
                     android:title="Extras" />
+
+                <item
+                    android:id="@+id/nav_myOrder"
+                    android:icon="@drawable/myorder"
+                    android:title="My Orders" />
 					
 				<item
                     android:id="@+id/nav_aboutUs"
