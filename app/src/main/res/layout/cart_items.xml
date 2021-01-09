@@ -13,90 +13,98 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="2"
-            android:orientation="horizontal">
-
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_weight="0.50"
-                android:layout_margin="5dp"
-                android:layout_height="wrap_content">
-
-
-                <ImageView
-                    android:layout_margin="10dp"
-                    android:id="@+id/imagepiz"
-                    android:layout_gravity="center"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_weight="1.50"
-              android:layout_marginTop="20dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:weightSum="2"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/pizza_name"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="0.50"
+                    android:layout_margin="5dp"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:layout_margin="10dp"
+                        android:id="@+id/imagepiz"
+                        android:layout_gravity="center"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1.50"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                   android:gravity="center"
-                    android:textColor="@color/mainAppColor"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/pizza_quantity"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:layout_marginRight="10dp"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="italic" />
+                    <TextView
+                        android:id="@+id/pizza_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:textColor="@color/mainAppColor"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/pizza_quantity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="italic" />
 
 
-                <TextView
-                    android:id="@+id/pizza_price"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="italic" />
+                    <TextView
+                        android:id="@+id/pizza_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="italic" />
+
+                    <Button
+                        android:id="@+id/remove"
+                        android:layout_width="30dp"
+                        android:background="@drawable/delete"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                </LinearLayout>
+
 
             </LinearLayout>
-
-
-        </LinearLayout>
-        <TextView
-            android:id="@+id/pizza_des"
-            android:layout_width="match_parent"
-            android:gravity="center"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:textSize="20sp"
-            android:layout_marginBottom="10dp"
-            android:textStyle="italic"
-            android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/pizza_des"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="italic"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
 

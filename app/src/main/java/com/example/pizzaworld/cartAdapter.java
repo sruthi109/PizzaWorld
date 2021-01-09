@@ -1,24 +1,38 @@
 package com.example.pizzaworld;
 
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pizzaworld.model.PojoDetails;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+
+import static android.content.Intent.getIntent;
+import static androidx.core.content.ContextCompat.startActivity;
+import static java.security.AccessController.getContext;
+
 
 public class cartAdapter extends BaseAdapter {
 
+    public FirebaseFirestore db = FirebaseFirestore.getInstance();
     List<PojoDetails> pojoDetails;
     Context context;
     public cartAdapter(Context context, List<PojoDetails> pojoDetails){
@@ -45,8 +59,8 @@ public class cartAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder viewHolder;
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        final ViewHolder viewHolder;
         if(convertView==null)
         {
             convertView= LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_items,null);
@@ -59,11 +73,49 @@ public class cartAdapter extends BaseAdapter {
 
         }
 
-        PojoDetails pojoDetails=getItem(position);
+        final PojoDetails pojoDetails=getItem(position);
         viewHolder.name.setText(pojoDetails.getPizzaname());
         viewHolder.price.setText(pojoDetails.getPrice());
         viewHolder.quantity.setText(pojoDetails.getQuantuu());
         viewHolder.des.setText(pojoDetails.getDes());
+        viewHolder.remove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setMessage("Would you like to remove order item permanently from Cart?")
+                        //  .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                db.collection("AddToCart").document(getItem(position).getId()).delete()
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if (task.isSuccessful()) {
+                                                    Intent intent1=new Intent(context,AddCart.class);
+
+                                                    context.startActivity(intent1);
+                                                    ((Activity)context).finish();
+
+                                                }
+                                            }
+                                        });
+
+
+                            }
+                        });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                AlertDialog alert = builder.create();
+                alert.show();
+                return;
+
+
+            }
+        });
 
 
         if(pojoDetails.getPizzaname().equals("Customised Pizza")){
@@ -214,6 +266,7 @@ public class cartAdapter extends BaseAdapter {
     class ViewHolder{
         TextView name,price,quantity,des;
         ImageView imagepiz;
+        Button remove;
 
         public ViewHolder(View view)
         {
@@ -222,9 +275,68 @@ public class cartAdapter extends BaseAdapter {
             des=view.findViewById(R.id.pizza_des);
             imagepiz=view.findViewById(R.id.imagepiz);
             quantity=view.findViewById(R.id.pizza_quantity);
+            remove=view.findViewById(R.id.remove);
         }
     }
 
+    /*ArrayList<PojoDetails> cartList;
+    public cartAdapter(ArrayList<PojoDetails>cart_items){
+        this.cartList=cart_items;
+    }
 
+
+
+    @Override
+    public int getCount() {
+        return cartList.size();
+    }
+
+    @Override
+    public PojoDetails getItem(int position) {
+        return cartList.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder viewHolder;
+        if(convertView==null)
+        {
+            convertView= LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_items,null);
+            viewHolder=new ViewHolder(convertView);
+            convertView.setTag(viewHolder);
+        }
+        else {
+            viewHolder=(ViewHolder) convertView.getTag();
+            PojoDetails movies=getItem(position);
+
+        }
+        PojoDetails pojoDetails=getItem(position);
+        viewHolder.name.setText(pojoDetails.getPizzaname());
+        viewHolder.price.setText(pojoDetails.getPrice());
+        viewHolder.quantity.setText(pojoDetails.getQuantuu());
+       // viewHolder.movieImage.setImageResource(moviesData.getMovieImage());
+
+        return convertView;
+
+    }
+    class ViewHolder{
+        TextView name,price,quantity;
+       // ImageView movieImage;
+
+        public ViewHolder(View view)
+        {
+            name=view.findViewById(R.id.pizza_name);
+            price=view.findViewById(R.id.pizza_price);
+           // movieImage=view.findViewById(R.id.imageViewMovie);
+            quantity=view.findViewById(R.id.pizza_quantity);
+        }
+    }
+
+     */
 }
 
