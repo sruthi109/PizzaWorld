@@ -17,7 +17,7 @@
         android:layout_height="80dp"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:src="@drawable/user"
+        android:src="@drawable/pizza"
         />
 
     <TextView
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:textColor="@color/white"
-        android:text="User"
+        android:text="Pizza World"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
@@ -33,5 +33,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:text="user@gmail.com" />
+        android:text="pizzaworld@gmail.com" />
 </LinearLayout>

@@ -56,14 +56,14 @@ public class AdminPanelAdapter extends BaseAdapter {
 
 
 
-           class ViewHolder {
-               TextView user;
+    class ViewHolder {
+        TextView user;
 
-               //
-                      public ViewHolder(View view)
-                   {
-                         user=view.findViewById(R.id.username);
+        //
+        public ViewHolder(View view)
+        {
+            user=view.findViewById(R.id.username);
 
-                      }
-           }
+        }
+    }
 }

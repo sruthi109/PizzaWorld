@@ -9,9 +9,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminPanel"></activity>
-        <activity android:name=".AddCart" />
-        <activity android:name=".Details" />
+        <activity android:name=".OrderDone"
+            >
+
+        </activity>
+        <activity
+            android:name=".Delivered"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".CheckOrders"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".AdminPanel"
+            android:label="Admin Panel">
+
+        </activity>
+        <activity
+            android:name=".AddCart"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".PizzaWorld"
+            android:label="PizzaWorld"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Details"
+            android:theme="@style/AppTheme.NoActionBar"   />
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

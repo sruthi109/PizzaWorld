@@ -38,7 +38,7 @@ public class   CheckOrders extends AppCompatActivity {
     private DeliveredAdapter adapter;
     String user;
     private List<PojoDetails> pojoDetails;
-   // FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    // FirebaseAuth mAuth = FirebaseAuth.getInstance();
     TextView addresss,total_price;
     Button delivered,cancel;
     @Override
@@ -72,14 +72,14 @@ public class   CheckOrders extends AppCompatActivity {
                         PojoDetails pDs = d.toObject(PojoDetails.class);
 
                         pDs.setId(d.getId());
-    // total_price.setText(pDs.getTotalprice());
-    // addresss.setText(pDs.getAddress());
+                        // total_price.setText(pDs.getTotalprice());
+                        // addresss.setText(pDs.getAddress());
 
                         pojoDetails.add(pDs);
 
                     }
                     adapter.notifyDataSetChanged();
-                    }
+                }
             }
         });
         delivered.setOnClickListener(new View.OnClickListener() {
@@ -134,17 +134,17 @@ public class   CheckOrders extends AppCompatActivity {
                         .setCancelable(false)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-           Intent intent = new Intent(CheckOrders.this,AdminPanel.class );
+                                Intent intent = new Intent(CheckOrders.this,AdminPanel.class );
 
-                                 startActivity(intent);
+                                startActivity(intent);
                             }
                         });
                 AlertDialog alert = builder.create();
                 alert.show();
                 return;
-              //  Intent intent = new Intent(CheckOrders.this,Delivered.class );
+                //  Intent intent = new Intent(CheckOrders.this,Delivered.class );
 
-               // startActivity(intent);
+                // startActivity(intent);
             }
 
 

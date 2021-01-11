@@ -1,4 +1,5 @@
 package com.example.pizzaworld;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,7 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.example.pizzaworld.model.PojoDetails;
+
 import java.util.List;
 
 public class DeliveredAdapter extends BaseAdapter {
@@ -221,7 +224,65 @@ public class DeliveredAdapter extends BaseAdapter {
         }
     }
 
+    /*ArrayList<PojoDetails> cartList;
+    public cartAdapter(ArrayList<PojoDetails>cart_items){
+        this.cartList=cart_items;
+    }
 
+
+
+    @Override
+    public int getCount() {
+        return cartList.size();
+    }
+
+    @Override
+    public PojoDetails getItem(int position) {
+        return cartList.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder viewHolder;
+        if(convertView==null)
+        {
+            convertView= LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_items,null);
+            viewHolder=new ViewHolder(convertView);
+            convertView.setTag(viewHolder);
+        }
+        else {
+            viewHolder=(ViewHolder) convertView.getTag();
+            PojoDetails movies=getItem(position);
+
+        }
+        PojoDetails pojoDetails=getItem(position);
+        viewHolder.name.setText(pojoDetails.getPizzaname());
+        viewHolder.price.setText(pojoDetails.getPrice());
+        viewHolder.quantity.setText(pojoDetails.getQuantuu());
+       // viewHolder.movieImage.setImageResource(moviesData.getMovieImage());
+
+        return convertView;
+
+    }
+    class ViewHolder{
+        TextView name,price,quantity;
+       // ImageView movieImage;
+
+        public ViewHolder(View view)
+        {
+            name=view.findViewById(R.id.pizza_name);
+            price=view.findViewById(R.id.pizza_price);
+           // movieImage=view.findViewById(R.id.imageViewMovie);
+            quantity=view.findViewById(R.id.pizza_quantity);
+        }
+    }
+
+     */
 }
 
 

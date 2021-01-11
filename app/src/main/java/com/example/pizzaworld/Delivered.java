@@ -36,7 +36,7 @@ public class Delivered extends AppCompatActivity {
         back=findViewById(R.id.back);
         pojoDetails = new ArrayList<PojoDetails>();
         adapter = new DeliveredAdapter(this, pojoDetails);
-        //listView.setAdapter(adapter);
+        listView.setAdapter(adapter);
         db.collection("AddToCart").whereEqualTo("status", "Delivered").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -49,7 +49,7 @@ public class Delivered extends AppCompatActivity {
 
                         pojoDetails.add(pDs);
                     }
-                  //  adapter.notifyDataSetChanged();
+                    adapter.notifyDataSetChanged();
                 }
             }
         });

@@ -9,7 +9,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class Splash extends AppCompatActivity {
-ImageView imageView;
+    ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

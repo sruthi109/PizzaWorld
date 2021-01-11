@@ -39,7 +39,7 @@ public class AdminPanel extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private List<PojoDetails> pojoDetails;
     private List<PojoDetails> pojoDetailsFiltered;
-   // private List<PojoDetails> list;
+    // private List<PojoDetails> list;
     private AdminPanelAdapter adapter;
     ListView listView;
     PojoDetails p;
@@ -47,12 +47,12 @@ public class AdminPanel extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-       // Toolbar toolbar = findViewById(R.id.toolbar);
-      //  setSupportActionBar(toolbar);
+        // Toolbar toolbar = findViewById(R.id.toolbar);
+        //  setSupportActionBar(toolbar);
         setContentView(R.layout.activity_admin_panel);
         listView=findViewById(R.id.listu);
-      //  pojoDetails = new ArrayList<PojoDetails>();
-      pojoDetails = new ArrayList<PojoDetails>();
+        //  pojoDetails = new ArrayList<PojoDetails>();
+        pojoDetails = new ArrayList<PojoDetails>();
         pojoDetailsFiltered = new ArrayList<PojoDetails>();
         adapter = new AdminPanelAdapter(this, pojoDetailsFiltered);
         listView.setAdapter(adapter);
@@ -61,24 +61,24 @@ public class AdminPanel extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
-                  //List<String> list = new ArrayList<>();
+                    //List<String> list = new ArrayList<>();
                     for (QueryDocumentSnapshot document : task.getResult()) {
 
                         Log.d("", document.getId());
                         p= (document.toObject(PojoDetails.class));
 
 
-                      pojoDetails.add(p);
-                      for(PojoDetails Poj: pojoDetails){
-                          boolean isFound= false;
-                          for(PojoDetails po: pojoDetailsFiltered){
-                              if (po.getUserId().equals(Poj.getUserId())||(po.equals((Poj)))){
-                                  isFound=true;
-                                  break;
-                              }
-                          }
-                          if(!isFound) pojoDetailsFiltered.add(Poj);
-                      }
+                        pojoDetails.add(p);
+                        for(PojoDetails Poj: pojoDetails){
+                            boolean isFound= false;
+                            for(PojoDetails po: pojoDetailsFiltered){
+                                if (po.getUserId().equals(Poj.getUserId())||(po.equals((Poj)))){
+                                    isFound=true;
+                                    break;
+                                }
+                            }
+                            if(!isFound) pojoDetailsFiltered.add(Poj);
+                        }
 
 
 
@@ -120,7 +120,6 @@ public class AdminPanel extends AppCompatActivity {
         finish();
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -138,5 +137,4 @@ public class AdminPanel extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }
